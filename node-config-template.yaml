@@ -15,7 +15,10 @@ write_files:
               "type": "calico-ipam"
           },
           "policy": {
-              "type": "default-deny-inbound"
+              "type": "k8s",
+              "k8s_api_root": "https://172.18.18.101:443/api/v1/",
+              "k8s_client_certificate": "/etc/kubernetes/ssl/worker.pem",
+              "k8s_client_key": "/etc/kubernetes/ssl/worker-key.pem" 
           }
       }
 
