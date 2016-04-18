@@ -1,5 +1,5 @@
 # Size of the cluster created by Vagrant
-num_instances=4
+num_instances=3
 
 # Change basename of the VM
 instance_name_prefix="k8s"
@@ -41,8 +41,8 @@ Vagrant.configure("2") do |config|
       # Use a different cloud-init on the first server.
       if i == 1
 	config.vm.provider :virtualbox do |v|
-	  v.memory = 4096 
-	  v.cpus = 4
+	  v.memory = 2048 
+	  v.cpus = 2
 	end
 
 	# Pre-fetch docker images.
@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
         host.vm.provision :shell, :inline => "mv /tmp/vagrantfile-user-data /var/lib/coreos-vagrant/", :privileged => true
       else
 	config.vm.provider :virtualbox do |v|
-	  v.memory = 4096 
+	  v.memory = 2048 
 	  v.cpus = 2
 	end
 

@@ -16,7 +16,7 @@ for i in range(MAX_SECONDS):
 	
 	# Check if we should exit.
 	print("%s node(s) started" % len(nodes))
-	if len(nodes) >= 3:
+	if len(nodes) >= 2:
 		print("All nodes started")
 		sys.exit(0)
 	if i == MAX_SECONDS:
