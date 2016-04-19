@@ -62,17 +62,17 @@ write_files:
               - name: K8S_API
                 value: "http://127.0.0.1:8080"
               - name: LEADER_ELECTION 
-                value: "true"
+                value: "false"
           # Leader election container used by the policy agent.
-          - name: leader-elector
-            image: gcr.io/google_containers/leader-elector:0.4
-            imagePullPolicy: IfNotPresent
-            args:
-              - "--election=calico-policy-election"
-              - "--http=127.0.0.1:4040"
-            ports:
-              - containerPort: 4040
-                protocol: TCP
+          #- name: leader-elector
+          #  image: gcr.io/google_containers/leader-elector:0.4
+          #  imagePullPolicy: IfNotPresent
+          #  args:
+          #    - "--election=calico-policy-election"
+          #    - "--http=127.0.0.1:4040"
+          #  ports:
+          #    - containerPort: 4040
+          #      protocol: TCP
 
 coreos:
   update:
